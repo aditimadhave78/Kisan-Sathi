@@ -1,10 +1,10 @@
-# 🌱 Kisan Sathi
+#  Kisan Sathi
 
 A full-stack web application for farmers — real-time mandi prices, crop management, and secure login system.
 
 ---
 
-## 🔧 Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -15,7 +15,7 @@ A full-stack web application for farmers — real-time mandi prices, crop manage
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 kisan-sathi/
@@ -40,7 +40,7 @@ kisan-sathi/
 
 ---
 
-## 🔌 How Frontend connects to Backend to Database
+##  How Frontend connects to Backend to Database
 
 ```
 Browser (HTML/JS)
@@ -63,7 +63,7 @@ MySQL Database (kisan_sathi)
 
 ---
 
-## ⚙️ Setup & Run Locally
+##  Setup & Run Locally
 
 ### 1. Clone the repo
 ```bash
@@ -122,7 +122,7 @@ http://localhost:3000
 
 ---
 
-## 🌐 API Endpoints
+##  API Endpoints
 
 | Method | Route | Description |
 |---|---|---|
@@ -134,15 +134,15 @@ http://localhost:3000
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔒 Secure signup/login with JWT authentication
-- 🌾 Add and track your crops (season, area, sowing date)
-- 💰 Real-time mandi bhav (market prices) by state
-- 📱 Responsive design — works on mobile too
+-  Secure signup/login with JWT authentication
+-  Add and track your crops (season, area, sowing date)
+-  Real-time mandi bhav (market prices) by state
+-  Responsive design — works on mobile too
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
-Made with ❤️ for Indian farmers.
+Made for Indian farmers.
