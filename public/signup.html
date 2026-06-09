@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kisan Sathi - Signup</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f7f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    h2 {
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 1.6rem;
+    }
+    .logo {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #2e7d32;
+    }
+    button {
+      width: 100%;
+      padding: 13px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover { background: #1b5e20; }
+    .msg {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+    .msg.success { color: green; }
+    .msg.error { color: red; }
+    .login-link {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .login-link a { color: #2e7d32; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🌱</div>
+    <h2>Kisan Sathi</h2>
+
+    <input type="text"     id="name"     placeholder="Poora Naam" />
+    <input type="email"    id="email"    placeholder="Email Address" />
+    <input type="password" id="password" placeholder="Password" />
+    <input type="text"     id="phone"    placeholder="Phone Number" />
+    <input type="text"     id="location" placeholder="Gaon / Shahar" />
+    <select id="state">
+      <option value="">-- State Chuniye --</option>
+      <option>Maharashtra</option>
+      <option>Punjab</option>
+      <option>Rajasthan</option>
+      <option>Uttar Pradesh</option>
+      <option>Madhya Pradesh</option>
+      <option>Gujarat</option>
+      <option>Karnataka</option>
+      <option>Haryana</option>
+      <option>Bihar</option>
+      <option>Andhra Pradesh</option>
+    </select>
+
+    <button onclick="signup()">Register Karo</button>
+    <div class="msg" id="msg"></div>
+    <div class="login-link">
+      Pehle se account hai? <a href="login.html">Login Karo</a>
+    </div>
+  </div>
+
+  <script>
+    async function signup() {
+      const name     = document.getElementById('name').value;
+      const email    = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const phone    = document.getElementById('phone').value;
+      const location = document.getElementById('location').value;
+      const state    = document.getElementById('state').value;
+
+      if (!name || !email || !password || !state) {
+        document.getElementById('msg').innerHTML = '⚠️ Saari fields bharo!';
+        document.getElementById('msg').className = 'msg error';
+        return;
+      }
+
+      const res = await fetch('http://localhost:3000/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password, phone, location, state })
+      });
+
+      const data = await res.json();
+      const msgDiv = document.getElementById('msg');
+
+      if (data.success) {
+        msgDiv.innerHTML = '✅ Registration successful! Login karo.';
+        msgDiv.className = 'msg success';
+        setTimeout(() => window.location.href = 'login.html', 1500);
+      } else {
+        msgDiv.innerHTML = '❌ ' + data.message;
+        msgDiv.className = 'msg error';
+      }
+    }
+  </script>
+</body>
+</html>

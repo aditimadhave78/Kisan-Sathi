@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kisan Sathi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f7f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 50px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 420px;
+    }
+    .logo { font-size: 4rem; margin-bottom: 10px; }
+    h1 { color: #2e7d32; font-size: 2rem; margin-bottom: 8px; }
+    p { color: #666; font-size: 0.95rem; margin-bottom: 30px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      margin-bottom: 12px;
+      text-decoration: none;
+    }
+    .btn-green {
+      background: #2e7d32;
+      color: white;
+    }
+    .btn-green:hover { background: #1b5e20; }
+    .btn-outline {
+      background: white;
+      color: #2e7d32;
+      border: 2px solid #2e7d32;
+    }
+    .btn-outline:hover { background: #f0f7f0; }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+    .feature { font-size: 0.82rem; color: #555; }
+    .feature span { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🌱</div>
+    <h1>Kisan Sathi</h1>
+    <p>Farmers ke liye ek platform — Real time mandi prices,<br>fasal management aur adhik!</p>
+
+    <div class="features">
+      <div class="feature"><span>💰</span>Mandi Bhav</div>
+      <div class="feature"><span>🌾</span>Fasal Track</div>
+      <div class="feature"><span>🔒</span>Secure Login</div>
+    </div>
+
+    <a href="signup.html" class="btn btn-green">Naya Account Banao</a>
+    <a href="login.html" class="btn btn-outline">Login Karo</a>
+  </div>
+</body>
+</html>
